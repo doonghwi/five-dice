@@ -18,19 +18,33 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="주사위 5개 집계 — 오프라인 패스앤플레이 게임">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="five_dice">
+  <meta name="apple-mobile-web-app-title" content="주사위 집계">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png?v=1"/>
 
-  <title>five_dice</title>
+  <title>주사위 5개 집계</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- 이전 빌드의 서비스워커/캐시를 제거해 항상 최신 코드를 보여줌 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        for (const reg of regs) { reg.unregister(); }
+      });
+      if (window.caches) {
+        caches.keys().then(function (keys) {
+          for (const k of keys) { caches.delete(k); }
+        });
+      }
+    }
+  </script>
 </head>
 <body>
   <!--
