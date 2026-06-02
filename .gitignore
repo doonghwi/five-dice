@@ -1,0 +1,22 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+.pub-cache/
+.pub/
+*.iml
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+*.keystore
+
+# OMC / local
+.omc/
+shots/
+
+# Misc
+.DS_Store
+*.log
